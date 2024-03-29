@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Statement Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bank Statement Analyzer</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#import">Import Data</a></li>
+            <li><a href="#analysis">Analysis</a></li>
+            <li><a href="#budget">Budgeting</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#security">Security</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome to Bank Statement Analyzer</h2>
+            <p>Start managing your finances efficiently.</p>
+        </section>
+        <section id="import">
+            <h2>Import Data</h2>
+            <!-- Form for importing data -->
+            <form id="importForm">
+                <input type="file" id="fileInput" accept=".pdf,.csv">
+                <button type="submit">Import</button>
+            </form>
+        </section>
+        <section id="analysis">
+            <h2>Analysis</h2>
+            <!-- Display analysis results -->
+            <div id="analysisResults">
+                <!-- Visualization and reports go here -->
+            </div>
+        </section>
+        <section id="budget">
+            <h2>Budgeting</h2>
+            <!-- Budgeting tools -->
+            <div id="budgetTools">
+                <!-- Budget setup and tracking -->
+            </div>
+        </section>
+        <section id="goals">
+            <h2>Goals</h2>
+            <!-- Goal setting and tracking -->
+            <div id="goalTracker">
+                <!-- Goal setup and progress -->
+            </div>
+        </section>
+        <section id="security">
+            <h2>Security</h2>
+            <p>Security measures information...</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bank Statement Analyzer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script src = "script.js">
+    document.getElementById('importForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+    
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
+    
+        if (file) {
+            // File reading
+            var reader = new FileReader();
+    
+            reader.onload = function(event) {
+                var contents = event.target.result;
+                // Here you can process the file contents (e.g., parse CSV, analyze data)
+                console.log('File contents:', contents);
+                alert('File imported successfully!');
+            };
+    
+            reader.readAsText(file); // Read file as text
+        } else {
+            alert('Please select a file to import.');
+        }
+    });
+    </script>
+    <style>/* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        /* Form styles */
+        form {
+            margin-bottom: 20px;
+        }
+        
+        /* Button styles */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Input file styles */
+        input[type="file"] {
+            display: none;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        </style>
+        
